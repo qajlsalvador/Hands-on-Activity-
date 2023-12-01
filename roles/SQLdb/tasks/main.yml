@@ -1,0 +1,24 @@
+---
+- name: install mariadb server
+  apt:
+    name: mariadb-server
+    state: present
+
+- name: install mysql
+  apt:
+    name: python3-pymysql
+    state: present
+
+- name: start Mariadb
+  service:
+    name: mariadb
+    state: started
+    enabled: yes
+  become: true
+
+- name: restart mysql
+  systemd:
+    name: mysql
+    state: restarted
+    enabled: yes
+  become: true

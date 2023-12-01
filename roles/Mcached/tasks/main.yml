@@ -1,0 +1,12 @@
+---
+- name: install Memcached
+  apt:
+    name: memcached
+    state: present
+
+- name: restart Memcached
+  systemd:
+    name: memcached
+    state: restarted
+    enabled: yes
+  become: true

@@ -1,0 +1,9 @@
+---
+- name: install OpenStack packages
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - nova-compute
+    - python3-openstackclient
+  become_method: sudo

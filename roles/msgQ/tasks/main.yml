@@ -1,0 +1,5 @@
+---
+- name: install msgQueue
+  apt:
+    name: rabbitmq-server
+    state: present
